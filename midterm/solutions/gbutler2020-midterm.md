@@ -5,25 +5,28 @@
     }
 
     .leftTable {
-    display: block;
-    margin-left: 0px;
-    margin-right: auto;
-    width: 40%;
+        display: block;
+        margin-left: 0px;
+        margin-right: auto;
+        width: 40%;
     }
 
     .leftTable th {
-    background: rgba(0,0,0,0.2);
+        background: rgba(0,0,0,0.2);
     }
 
     .centerTable {
-    display: block;
-    margin-left: 0px;
-    margin-right: auto;
-    width: 40%;
+        margin-left: 40%;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .centerTable th {
-    background: rgba(0,0,0,0.2);
+        background: rgba(0,0,0,0.4);
+    }
+
+    .highlightFirstColumn tr td:nth-child(1) {
+        background: rgba(0,0,0,0.2);
     }
 </style>
 
@@ -37,32 +40,65 @@ Grant Butler, CSE4083 Spring 2022, Computer Science B.S.
 ## 1 Deterministic Finite Automata
 
 
-1. <a id="1"></a> Consider a DFA $M=(Q, Σ, δ, s, f)$ with States $Q ={s, q_1, q_2, f}$ where _s_ is the start and _f_ is the final state; </br>
+1. <a id="1"></a> Consider a DFA $M=(Q, Σ, δ, s, f)$ with States $Q =\{s, q_1, q_2, f\}$ where _s_ is the start and _f_ is the final state; </br>
 Alphabet $Σ = \{0,1\}$ and transition function _δ_.
 
-<body>
 Construct a state transition table for _δ_ (or you can draw a state transition diagram) that recognizes regular expressions that are binary strings and multiples of 3, for example, the strings:
 
 <div class="center">
+
 $0, 11, 110, 1001, 1100, ...$
+
 </div>
 
 would be accepted strings, but
 
 <div class="center">
+
 $1, 10, 100, 101, ...$
+
 </div>
 
 would not be accepted.
 
 
 ><sub>
-\*Hint: Think, if $n = 3k$ is a multiple of 3, then the next multiple of 3 is $3k + 3$. </br>
-This could be accomplished by a transition from the current state to a next state by scanning 3 ones.
-</sub>
-</body>
+>\*Hint: Think, if $n = 3k$ is a multiple of 3, then the next multiple of 3 is $3k + 3$. </br>
+>This could be accomplished by a transition from the current state to a next state by scanning 3 >ones.
+></sub>
+
+Given language $L= \{0, 11, 110, 1001, 1100, ... \}$ and alphabet $Σ=\{0, 1\}$, </br>the transition table for transition function _δ_ is:
+
+<div class="centerTable highlightFirstColumn">
+
+|       | 0     | 1     |
+|:-:    |:-:    |:-:    |
+|$q_0$  |$q_0$  |$q_1$  |
+|$q_1$  |$q_2$  |$q_0$  |
+|$q_2$  |$q_1$  |$q_2$  |
+
+</div>
+There are three states in the DFA. The transition diagram is as follows:
+
+<div class="center">
+
+```mermaid
+graph LR
+    A((q<sub>0</sub>)) -- 1 --> B((q<sub>1</sub>))
+    START[ ] --> A
+    A -- 0 --> A
+    B -- 0 --> C((q<sub>2</sub>))
+    B -- 1 --> A
+    C -- 0 --> B
+    C -- 1 --> C
+    style START fill:#FFFFFF, stroke:#FFFFFF;
+```
+
+</div>
 
 
+[//]: # (style STOP  fill:#FFFFFF, stroke:#FFFFFF;
+         style START fill:#FFFFFF, stroke:#FFFFFF;)
 
 <div style="page-break-after: always; break-after: page;"></div>
 
@@ -79,13 +115,17 @@ This could be accomplished by a transition from the current state to a next stat
 3. <a id="3"></a> Consider a programming language that has identifiers that start with a lowercase ASCII letter
 
 <div class="center">
+
 $A=\{a..z\}$
+
 </div>
 
 followed by a string of 1 or more digits
 
 <div class="center">
+
 $D=\{0..9\}$
+
 </div>
 
 or 1 or more lowercase ASCII letters. Show how to write this specification as a regular expression.
@@ -134,7 +174,9 @@ Answer these $True$ (T) or $False$ (F) questions. Give a brief explanation of yo
 11. <a id="11"></a> On the set ℕ of natural numbers define an equivalence relation $n\equiv m$ if and only if
 
 <div class="center">
+
 $n\mod3=m\mod3$
+
 </div>
 
 ><sub>\*Hint: Recall any natural number n can be written as $n= 3q+r$ n with quotient q and remainder r. </br>
@@ -151,7 +193,9 @@ Prove that $\equiv$ is an equivalence relation on the set of natural numbers.
 12. <a id="12"></a> DFAs can't count to an arbitrary natural number! Use the pumping lemma for regular languages to show that language
 
 <div class="center">
+
 $EQ=\{w ∈ {\{a, b\}*} : w = a^i b^i \}$
+
 </div>
 
 is not regular. Here the number of _a's_ in the prefix of _w_ equals the number of _b's_ in the suffix of _w_.
@@ -164,7 +208,9 @@ is not regular. Here the number of _a's_ in the prefix of _w_ equals the number 
 13. <a id="13"></a> Consider the CFG G defined by the productions:
 
 <div class="center">
+
 $S \rightarrow aS|Sb|a|b$
+
 </div>
 
 Prove by induction that no string in $L(G)$ has $ba$ as a sub-string.
@@ -188,6 +234,7 @@ productions following four grammars $(G = (V, T, P, S) )$:
 <div style="page-break-after: always; break-after: page;"></div>
 
 <div class="leftTable">
+
 | Question              | Points | Score  |
 | ------------------    | ------ | ------ |
 | [1](#1)               |   10   |        |
@@ -205,4 +252,5 @@ productions following four grammars $(G = (V, T, P, S) )$:
 | [13](#13)             |   5    |        |
 | [14](#14)             |   5    |        |
 | Total:                |   100  |        |
+
 </div>
