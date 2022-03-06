@@ -3,16 +3,30 @@
         display: flex;
         justify-content: center;
     }
+
+    .centerTable {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    }
+
+    .centerTable th {
+    background: rgba(0,0,0,0.2);
+    }
 </style>
+
 
 # Formal Languages — CSE 4083 & CSE 5210
 
 Grant Butler, CSE4083 Spring 2022, Computer Science B.S.
 
+<div style="page-break-after: always; break-after: page;"></div>
 
-## 1. Deterministic Finite Automata
+## 1 Deterministic Finite Automata
 
-1. Consider a DFA $M=(Q, Σ, δ, s, f)$ with States $Q ={s, q_1, q_2, f}$ where _s_ is the start and _f_ is the final state; </br>
+
+1. <a id="1"></a> Consider a DFA $M=(Q, Σ, δ, s, f)$ with States $Q ={s, q_1, q_2, f}$ where _s_ is the start and _f_ is the final state; </br>
 Alphabet $Σ = {0,1}$ and transition function _δ_.
 
 Construct a state transition table for _δ_ (or you can draw a state transition diagram) that recognizes regular expressions that are binary strings and multiples of 3, for example, the strings:
@@ -30,23 +44,23 @@ $1, 10, 100, 101, ...$
 would not be accepted.
 
 ><sub>
-\*(Hint: Think, if $n = 3k$ is a multiple of 3, then the next multiple of 3 is $3k + 3$. </br>
-This could be accomplished by a transition from the current state to a next state by scanning 3 ones.)
+\*Hint: Think, if $n = 3k$ is a multiple of 3, then the next multiple of 3 is $3k + 3$. </br>
+This could be accomplished by a transition from the current state to a next state by scanning 3 ones.
 </sub>
 
 <div style="page-break-after: always; break-after: page;"></div>
 
 
-## 2. Nondeterministic Finite Automata
+## 2 Nondeterministic Finite Automata
 
-2. Explain how any NFA (with λ (or ∈) transitions) can be converted into a DFA that accepts the same language as that accepted by the NFA. That is, the expressive power of NFAs and DFAs are equivalent.  This is known as the Rabin-Scott Theorem
-
-
+2. <a id="2"></a> Explain how any NFA (with λ (or ∈) transitions) can be converted into a DFA that accepts the same language as that accepted by the NFA. That is, the expressive power of NFAs and DFAs are equivalent.  This is known as the Rabin-Scott Theorem
 
 
-## 3. Regular Expressions in the Programming World
 
-3. (10 points) Consider a programming language that has identifiers that start with a lowercase ASCII letter
+
+## 3 Regular Expressions in the Programming World
+
+3. <a id="3"></a> Consider a programming language that has identifiers that start with a lowercase ASCII letter
 
 <div class="center">
 $A=\{a..z\}$
@@ -60,132 +74,119 @@ $D=\{0..9\}$
 
 or 1 or more lowercase ASCII letters. Show how to write this specification as a regular expression.
 
-![Shape4](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
 
 
-# 4. Closure Properties of Languages
+## 4 Closure Properties of Languages
 
-Answer these True(T) or False(F) questions. Give a brief explanation of your answer (for example, explain how to construct a machine that implements the property.)
+Answer these $True$ (T) or $False$ (F) questions. Give a brief explanation of your answer
 
-1. (5points)Regular languages are closed under_intersection_.
+><sub>
+\*(for example, explain how to construct a machine that implements the property.)
+</sub>
 
-![Shape5](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+4. <a id="4"></a> Regular languages are closed under intersection.
 
-1. (5points)Regular languages are closed under_Kleene-star_.
+5. <a id="5"></a> Regular languages are closed under Kleene-star.
 
-![Shape6](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
 
-1.
-# Decision Properties ofLanguages
+## 5 Decision Properties of Languages
 
-1. (5points)Whatdoesitmeantosaythata&quot;yes&quot;or&quot;no&quot;questionis_undecidable_?
+6. <a id="6"></a> What does it mean to say that a “yes” or “no” question is _undecidable_?
 
-![Shape7](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+<div style="page-break-after: always; break-after: page;"></div>
 
-1. (5points)AnswerTrue(T)orFalse(F):Itisdecidablewhetherornotthelanguage of a DFA is empty or non-empty. Give an explanation of youranswer.
+##### $True$ (T) or $False$ (F):
+- - -
 
-![Shape8](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+7. <a id="7"></a> It is decidable whether or not the language of a DFA is empty or non-empty. Give an explanation of your answer.
 
-1. (5points)ItisdecidablewhetherornotthelanguageofaDFAisfiniteorinfinite.
 
-![Shape9](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+8. <a id="8"></a> It is decidable whether or not the language of a DFA is finite or infinite.
 
-1. (5points)It is undecidable whether or not the a string _s_ is accepted by a DFA. Answer True (T) or False(F): Give an explanation of your answer.
 
-![Shape10](RackMultipart20220306-4-17r4duc_html_f66d1ee258f65367.gif)
+9. <a id="9"></a> It  is  undecidable  whether  or  not  the  a  strings is  accepted  by  a  DFA.
 
-![Shape11](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
 
-1. (5points)AnswerTrue(T)orFalse(F):Itisdecidablewhetherornottworegular languages _L_1and _L_2areequal.
+10. <a id="10"></a> It is decidable whether or not two regular languages $L_1$ and $L_2$ are equal. Give an explanation of your answer.
 
-Give an explanation of your answer.
+- - -
 
-![Shape12](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+<div style="page-break-after: always; break-after: page;"></div>
 
-1.
-# EquivalenceRelations
+## 6 Equivalence Relations
 
-1. ≡(10 points) On the set N of natural numbers define an equivalencerelation_n m_ if and onlyif
+11. <a id="11"></a> On the set ℕ of natural numbers define an equivalence relation $n\equiv m$ if and only if
 
-_n_ mod 3=_m_ mod3
+<div class="center">
+$n\mod3=m\mod3$
+</div>
 
-_{ ∈_ _}_
+><sub>\*Hint: Recall any natural number n can be written as $n= 3q+r$ n with quotient q and remainder r. </br>
+And **$n\mod 3 =\{kr:k∈ℕ\}$** The set of all natural numbers that have a remainder of r when divided by 3.
+</sub>
 
-(Hint: Recall any natural number _n_ can be written as _n_ = 3_q_ + _r n_ with quotient _q_ and remainder _r_. And _n_ mod 3 = _kr_ : _k_ N The set of all natural numbers that have a remainder of _r_ when divided by 3.
+Prove that $\equiv$ is an equivalence relation on the set of natural numbers.
 
-≡
 
-The slick way of saying this is: _n m_ if and only if they both have the same reminder when divided by 3.
+<div style="page-break-after: always; break-after: page;"></div>
 
-Prove that _≡_ is an equivalence relation on the set of naturalnumbers.
+## 7 The Pumping Lemma for Regular Languages
 
-![Shape13](RackMultipart20220306-4-17r4duc_html_f66d1ee258f65367.gif)
- ![Shape14](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+12. <a id="12"></a> DFAs can't count to an arbitrary natural number! Use the pumping lemma for regular languages to show that language
 
-1.
-# The Pumping Lemma for RegularLanguages
+<div class="center">
+$EQ=\{w ∈ {\{a, b\}*} : w = a^i b^i \}$
+</div>
 
-1. {(10 points) DFAs can&#39;t count to an arbitrary natural number! Use the pumping lemma for regular languages to show thatlanguage
+is not regular. Here the number of _a's_ in the prefix of _w_ equals the number of _b's_ in the suffix of _w_.
 
-EQ=_w __∈__ { __a,__ b __}__ ∗_:_w_=_a __i__ b__i_
 
-is not regular. Here the number of _a_&#39;s in the prefix of _w_ equals the number of _b_&#39;s in the suffix of_w_.
+<div style="page-break-after: always; break-after: page;"></div>
 
-![Shape15](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+## 8 Context Free Languages
 
-1.
-# Context FreeLanguages
+13. <a id="13"></a> Consider the CFG G defined by the productions:
 
-1. (5 points) Consider the CFG G defined by theproductions:
+<div class="center">
+$S \rightarrow aS|Sb|a|b$
+</div>
 
-_S __→__ a __S__ | __S__ b __|__ a __|__ b_
+Prove by induction that no string in $L(G)$ has $ba$ as a sub-string.
 
-Prove by induction that no string in L(G) has _ba_ as a sub-string. Hint: To show this do induction on the length of the strings.
+><sub>
+Hint: To show this do induction on the length of the strings.
+</sub>
 
-![Shape16](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
 
-1. (5 points) Give simple English language descriptions for the strings generated by the productionsfollowingfourgrammars(_G_=(_V, __T,__ P,__S_):
-  1. _G_1_→ __S__ | __a__ S __|__ a_
+14. <a id="14"></a> Give simple English language descriptions for the strings generated by the</br>
+productions following four grammars $(G = (V, T, P, S) )$:
 
-![Shape17](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+    1. $G_1 \rightarrow S|aS|a$
 
-  1. _G_2:_S_!_a __S__ a __|__ aa __|__ a_
 
-![Shape18](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+    2. $G_2 : S!aSa|aa|a$
 
-  1. _G_3:_S __|__ S __a__ S __|__ a_
 
-![Shape19](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+    3. $G_3 : S|SaS|a$
 
-| Question | Points | Score |
-| --- | --- | --- |
-| [1](#_bookmark0) | 10 |
- |
-| [2](#_bookmark1) | 15 |
- |
-| [3](#_bookmark2) | 10 |
- |
-| [4](#_bookmark3) | 5 |
- |
-| [5](#_bookmark4) | 5 |
- |
-| [6](#_bookmark5) | 5 |
- |
-| [7](#_bookmark6) | 5 |
- |
-| [8](#_bookmark7) | 5 |
- |
-| [9](#_bookmark8) | 5 |
- |
-| [10](#_bookmark9) | 5 |
- |
-| [11](#_bookmark10) | 10 |
- |
-| [12](#_bookmark11) | 10 |
- |
-| [13](#_bookmark12) | 5 |
- |
-| [14](#_bookmark13) | 5 |
- |
-| Total: | 100 |
- |
+<div style="page-break-after: always; break-after: page;"></div>
+
+<div class="centerTable">
+| Question              | Points | Score  |
+| ------------------    | ------ | ------ |
+| [1](#1)               |   10   |        |
+| [2](#2)               |   15   |        |
+| [3](#3)               |   10   |        |
+| [4](#4)               |   5    |        |
+| [5](#5)               |   5    |        |
+| [6](#6)               |   5    |        |
+| [7](#7)               |   5    |        |
+| [8](#8)               |   5    |        |
+| [9](#9)               |   5    |        |
+| [10](#10)             |   5    |        |
+| [11](#11)             |   10   |        |
+| [12](#12)             |   10   |        |
+| [13](#13)             |   5    |        |
+| [14](#14)             |   5    |        |
+| Total:                |   100  |        |
+</div>
