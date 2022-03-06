@@ -1,0 +1,191 @@
+<style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+# Formal Languages — CSE 4083 & CSE 5210
+
+Grant Butler, CSE4083 Spring 2022, Computer Science B.S.
+
+
+## 1. Deterministic Finite Automata
+
+1. Consider a DFA $M=(Q, Σ, δ, s, f)$ with States $Q ={s, q_1, q_2, f}$ where _s_ is the start and _f_ is the final state; </br>
+Alphabet $Σ = {0,1}$ and transition function _δ_.
+
+Construct a state transition table for _δ_ (or you can draw a state transition diagram) that recognizes regular expressions that are binary strings and multiples of 3, for example, the strings:
+
+<div class="center">
+$0, 11, 110, 1001, 1100, ...$
+</div>
+
+would be accepted strings, but
+
+<div class="center">
+$1, 10, 100, 101, ...$
+</div>
+
+would not be accepted.
+
+><sub>
+\*(Hint: Think, if $n = 3k$ is a multiple of 3, then the next multiple of 3 is $3k + 3$. </br>
+This could be accomplished by a transition from the current state to a next state by scanning 3 ones.)
+</sub>
+
+<div style="page-break-after: always; break-after: page;"></div>
+
+
+## 2. Nondeterministic Finite Automata
+
+2. Explain how any NFA (with λ (or ∈) transitions) can be converted into a DFA that accepts the same language as that accepted by the NFA. That is, the expressive power of NFAs and DFAs are equivalent.  This is known as the Rabin-Scott Theorem
+
+
+
+
+## 3. Regular Expressions in the Programming World
+
+3. (10 points) Consider a programming language that has identifiers that start with a lowercase ASCII letter
+
+<div class="center">
+$A=\{a..z\}$
+</div>
+
+followed by a string of 1 or more digits
+
+<div class="center">
+$D=\{0..9\}$
+</div>
+
+or 1 or more lowercase ASCII letters. Show how to write this specification as a regular expression.
+
+![Shape4](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+
+# 4. Closure Properties of Languages
+
+Answer these True(T) or False(F) questions. Give a brief explanation of your answer (for example, explain how to construct a machine that implements the property.)
+
+1. (5points)Regular languages are closed under_intersection_.
+
+![Shape5](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1. (5points)Regular languages are closed under_Kleene-star_.
+
+![Shape6](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1.
+# Decision Properties ofLanguages
+
+1. (5points)Whatdoesitmeantosaythata&quot;yes&quot;or&quot;no&quot;questionis_undecidable_?
+
+![Shape7](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1. (5points)AnswerTrue(T)orFalse(F):Itisdecidablewhetherornotthelanguage of a DFA is empty or non-empty. Give an explanation of youranswer.
+
+![Shape8](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1. (5points)ItisdecidablewhetherornotthelanguageofaDFAisfiniteorinfinite.
+
+![Shape9](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1. (5points)It is undecidable whether or not the a string _s_ is accepted by a DFA. Answer True (T) or False(F): Give an explanation of your answer.
+
+![Shape10](RackMultipart20220306-4-17r4duc_html_f66d1ee258f65367.gif)
+
+![Shape11](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1. (5points)AnswerTrue(T)orFalse(F):Itisdecidablewhetherornottworegular languages _L_1and _L_2areequal.
+
+Give an explanation of your answer.
+
+![Shape12](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1.
+# EquivalenceRelations
+
+1. ≡(10 points) On the set N of natural numbers define an equivalencerelation_n m_ if and onlyif
+
+_n_ mod 3=_m_ mod3
+
+_{ ∈_ _}_
+
+(Hint: Recall any natural number _n_ can be written as _n_ = 3_q_ + _r n_ with quotient _q_ and remainder _r_. And _n_ mod 3 = _kr_ : _k_ N The set of all natural numbers that have a remainder of _r_ when divided by 3.
+
+≡
+
+The slick way of saying this is: _n m_ if and only if they both have the same reminder when divided by 3.
+
+Prove that _≡_ is an equivalence relation on the set of naturalnumbers.
+
+![Shape13](RackMultipart20220306-4-17r4duc_html_f66d1ee258f65367.gif)
+ ![Shape14](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1.
+# The Pumping Lemma for RegularLanguages
+
+1. {(10 points) DFAs can&#39;t count to an arbitrary natural number! Use the pumping lemma for regular languages to show thatlanguage
+
+EQ=_w __∈__ { __a,__ b __}__ ∗_:_w_=_a __i__ b__i_
+
+is not regular. Here the number of _a_&#39;s in the prefix of _w_ equals the number of _b_&#39;s in the suffix of_w_.
+
+![Shape15](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1.
+# Context FreeLanguages
+
+1. (5 points) Consider the CFG G defined by theproductions:
+
+_S __→__ a __S__ | __S__ b __|__ a __|__ b_
+
+Prove by induction that no string in L(G) has _ba_ as a sub-string. Hint: To show this do induction on the length of the strings.
+
+![Shape16](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+1. (5 points) Give simple English language descriptions for the strings generated by the productionsfollowingfourgrammars(_G_=(_V, __T,__ P,__S_):
+  1. _G_1_→ __S__ | __a__ S __|__ a_
+
+![Shape17](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+  1. _G_2:_S_!_a __S__ a __|__ aa __|__ a_
+
+![Shape18](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+  1. _G_3:_S __|__ S __a__ S __|__ a_
+
+![Shape19](RackMultipart20220306-4-17r4duc_html_f6ea64c4b332c257.gif)
+
+| Question | Points | Score |
+| --- | --- | --- |
+| [1](#_bookmark0) | 10 |
+ |
+| [2](#_bookmark1) | 15 |
+ |
+| [3](#_bookmark2) | 10 |
+ |
+| [4](#_bookmark3) | 5 |
+ |
+| [5](#_bookmark4) | 5 |
+ |
+| [6](#_bookmark5) | 5 |
+ |
+| [7](#_bookmark6) | 5 |
+ |
+| [8](#_bookmark7) | 5 |
+ |
+| [9](#_bookmark8) | 5 |
+ |
+| [10](#_bookmark9) | 5 |
+ |
+| [11](#_bookmark10) | 10 |
+ |
+| [12](#_bookmark11) | 10 |
+ |
+| [13](#_bookmark12) | 5 |
+ |
+| [14](#_bookmark13) | 5 |
+ |
+| Total: | 100 |
+ |
