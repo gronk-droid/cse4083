@@ -14,6 +14,17 @@
     .leftTable th {
     background: rgba(0,0,0,0.2);
     }
+
+    .centerTable {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 40%;
+    }
+
+    .centerTable th {
+    background: rgba(0,0,0,0.2);
+    }
 </style>
 
 
@@ -27,8 +38,9 @@ Grant Butler, CSE4083 Spring 2022, Computer Science B.S.
 
 
 1. <a id="1"></a> Consider a DFA $M=(Q, Σ, δ, s, f)$ with States $Q ={s, q_1, q_2, f}$ where _s_ is the start and _f_ is the final state; </br>
-Alphabet $Σ = {0,1}$ and transition function _δ_.
+Alphabet $Σ = \{0,1\}$ and transition function _δ_.
 
+<body>
 Construct a state transition table for _δ_ (or you can draw a state transition diagram) that recognizes regular expressions that are binary strings and multiples of 3, for example, the strings:
 
 <div class="center">
@@ -43,10 +55,14 @@ $1, 10, 100, 101, ...$
 
 would not be accepted.
 
+
 ><sub>
 \*Hint: Think, if $n = 3k$ is a multiple of 3, then the next multiple of 3 is $3k + 3$. </br>
 This could be accomplished by a transition from the current state to a next state by scanning 3 ones.
 </sub>
+</body>
+
+
 
 <div style="page-break-after: always; break-after: page;"></div>
 
