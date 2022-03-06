@@ -4,14 +4,14 @@
         justify-content: center;
     }
 
-    .centerTable {
+    .leftTable {
     display: block;
-    margin-left: auto;
+    margin-left: 0px;
     margin-right: auto;
     width: 40%;
     }
 
-    .centerTable th {
+    .leftTable th {
     background: rgba(0,0,0,0.2);
     }
 </style>
@@ -171,7 +171,7 @@ productions following four grammars $(G = (V, T, P, S) )$:
 
 <div style="page-break-after: always; break-after: page;"></div>
 
-<div class="centerTable">
+<div class="leftTable">
 | Question              | Points | Score  |
 | ------------------    | ------ | ------ |
 | [1](#1)               |   10   |        |
