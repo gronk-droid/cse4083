@@ -1,3 +1,12 @@
+---
+puppeteer:
+  format: "A4"
+  timeout: 3000 # <- Special config, which means waitFor 3000 ms
+
+export_on_save:
+    puppeteer: true # export PDF on save
+    puppeteer: ["pdf"] # export PDF file on save
+---
 <style>
     .center {
         display: flex;
@@ -16,9 +25,10 @@
     }
 
     .centerTable {
-        margin-left: 40%;
-        margin-top: 0;
-        margin-bottom: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
     }
 
     .centerTable th {
@@ -38,7 +48,6 @@ Grant Butler, CSE4083 Spring 2022, Computer Science B.S.
 <div style="page-break-after: always; break-after: page;"></div>
 
 ## 1 Deterministic Finite Automata
-
 
 1. <a id="1"></a> Consider a DFA $M=(Q, Σ, δ, s, f)$ with States $Q =\{s, q_1, q_2, f\}$ where _s_ is the start and _f_ is the final state; </br>
 Alphabet $Σ = \{0,1\}$ and transition function _δ_.
@@ -104,14 +113,19 @@ graph LR
 
 
 ## 2 Nondeterministic Finite Automata
+</br>
+2. <a id="2"></a> Explain how any NFA (with λ (or ∈) transitions) can be converted into a DFA that accepts the same language as that accepted by the NFA. That is, the expressive power of NFAs and DFAs are equivalent.  This is known as the Rabin-Scott Theorem.
+</br></br>
+The Rabin-Scott Theorem states the list of languages DFAs can identify is the same as those that NFAs can recognize.
 
-2. <a id="2"></a> Explain how any NFA (with λ (or ∈) transitions) can be converted into a DFA that accepts the same language as that accepted by the NFA. That is, the expressive power of NFAs and DFAs are equivalent.  This is known as the Rabin-Scott Theorem
+<div class="center">
 
+$()$
 
-
+</div>
 
 ## 3 Regular Expressions in the Programming World
-
+</br>
 3. <a id="3"></a> Consider a programming language that has identifiers that start with a lowercase ASCII letter
 
 <div class="center">
@@ -133,7 +147,7 @@ or 1 or more lowercase ASCII letters. Show how to write this specification as a 
 
 
 ## 4 Closure Properties of Languages
-
+</br>
 Answer these $True$ (T) or $False$ (F) questions. Give a brief explanation of your answer
 
 ><sub>
@@ -146,12 +160,12 @@ Answer these $True$ (T) or $False$ (F) questions. Give a brief explanation of yo
 
 
 ## 5 Decision Properties of Languages
-
+</br>
 6. <a id="6"></a> What does it mean to say that a “yes” or “no” question is _undecidable_?
 
 <div style="page-break-after: always; break-after: page;"></div>
 
-##### $True$ (T) or $False$ (F):
+##### _True_ (T) or _False_ (F):
 - - -
 
 7. <a id="7"></a> It is decidable whether or not the language of a DFA is empty or non-empty. Give an explanation of your answer.
@@ -170,7 +184,7 @@ Answer these $True$ (T) or $False$ (F) questions. Give a brief explanation of yo
 <div style="page-break-after: always; break-after: page;"></div>
 
 ## 6 Equivalence Relations
-
+</br>
 11. <a id="11"></a> On the set ℕ of natural numbers define an equivalence relation $n\equiv m$ if and only if
 
 <div class="center">
@@ -189,7 +203,7 @@ Prove that $\equiv$ is an equivalence relation on the set of natural numbers.
 <div style="page-break-after: always; break-after: page;"></div>
 
 ## 7 The Pumping Lemma for Regular Languages
-
+</br>
 12. <a id="12"></a> DFAs can't count to an arbitrary natural number! Use the pumping lemma for regular languages to show that language
 
 <div class="center">
