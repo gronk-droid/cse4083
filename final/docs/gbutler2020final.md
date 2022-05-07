@@ -272,6 +272,8 @@ with substrings _u, v, w, x,_ and _y_ such that:
 
 Pumping lemma for context free languages is a property all context free languages are garunteed to have. Pumping lemma states that a string _s_ can be split into five substrings, as described above, that can produce a string that is still in the language. The process of "pumping up" the copies of strings _v_ and _x_ is what gives it it's name.
 
+<div class="pageBreak"></div>
+
 ###### Diagram
 
 <div class="center">
@@ -279,6 +281,7 @@ Pumping lemma for context free languages is a property all context free language
 ![A derivation tree for pumping lemma of context free grammars](assets/pumpingLemmaCFG.svg)
 </div>
 
+<div class="pageBreak"></div>
 
 ### 10. Pumping Lemma In Use
 
@@ -336,6 +339,8 @@ Why is the (major) difference between function and relation interesting as relat
 
 A deterministic algorithm is one which an outcome is determined by a unique formula. Algorithms where the outcome is not specific is called a non-deterministic algorithm. A non-deterministic algorithm cannot be executed in polynomial-time, while a deterministic algorithm can be executed in polynomial time.
 
+<div class="pageBreak"></div>
+
 ### 14. State Transition Diagrams
 
 In the study of formal languages state-transition diagrams are often usedto visualize changes in a machine’s configuration as it acts on input. To visualize a machine’s configuration think of its parts: Commonly a finite set of states, a finite input alphabet Σ, Perhaps storage devices (a stack, input/output tapes). The states are pictured as named circles sometimes decorated with symbols to denote special states, e.g. start and final states. Changes in configuration are denoted by labeled edges andperhaps changes in storage.
@@ -374,13 +379,44 @@ Edges in turing machines are used to read a character and either go left or righ
 
 Give a precise (mathematical) definition of a Turing machine (TM) and how its parts work together to solve problems. Perhaps, not surprisingly (maybe surprisingly?), this most powerful machine envisioned is also the most simple known. (Other methods of computation have been developed, but each have been shown to be _equivalent_ in _expressible_ power as Turing machines). What does does this statement mean?
 
+###### Solution
 
+A turing machine is a 7-tuple:
+
+<div class="center">
+
+$M = \left\langle Q, Γ, b, Σ, δ, q_0, F \right\rangle$
+</div>
+
+where:
+- $Γ$: finite non-empty set of _tape alphabet symbols_
+- $b ∈ Γ$: the _blank symbol_ (only symbol allowed to occur infinitely at any step)
+- $Σ ⊆ Γ/\{b\}$: set of _input symbols_
+- $Q$: finite non-empty set of _states_
+- $q_0 ∈ Q$: initial state
+- $F ⊆ Q$: set of _final_ or _accepting_ states
+- $δ = (Q \backslash F)\timesΓ ↛ Q \times Γ \times \{ L,R \}$: partial function called the transition function, where $L$ is left shift and $R$ is right shift.
+
+There can also be a reject state that makes rejection more specific in a Turing machine. In that case, there are three possibilities: accepting, rejecting, and running forever.
+
+No other type of computational machine can defeat the Turing machine because all computing devices are Turing machines at their core.
+
+<div class="pageBreak"></div>
 
 ### 16. Problems Unsolvable by Turing Machines
 
 Describe a problem that cannot be solved by a TM. What does _undecidability_ mean to you _philosophically_?
 
+###### Solution
 
+The halting problem is a problem that cannot be solved with the Turing machine. It asks: given an arbitrary Turing machine $M$ over alphabet $Σ = \{a, b\}$ and arbitrary string $w$ over $Σ$, does $M$ halt when it is given $w$ as an input?
+
+That problem is unsolvable with a Turing machine, as it is not decideable, and hence is unsolvable.
+
+Undecidability means something that is impossible to find an answer to because there is always another step to check. Philosphically, I relate this to [analysis paralysis](https://en.wikipedia.org/wiki/Analysis_paralysis), where having more options ends up leading me to a point where I can't even make a decision.
 
 ### 17. Pumping Lemma for Turing Machines
 Is there a pumping lemma for Turing machines? If so, what is it? If not, why not?
+
+###### Solution
+There no is pumping lemma for Turing machines, because they can go backwards on their tapes. Because of this, making a pumping is extremely trivial. A Turing machine can deal with the string no matter what combination, so there is no way to pump lemma for a Turing machine.
